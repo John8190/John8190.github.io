@@ -620,9 +620,9 @@ footer .list{
     right: 0;
   }
   
-/*   .contact {
+  .contact {
     overflow-x: hidden; 
-  } */
+  }
 
   .contact .dp {
     flex-direction: column;
