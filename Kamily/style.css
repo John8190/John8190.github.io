@@ -12,7 +12,6 @@
   text-decoration: none;
   list-style: none;
   transition: 0.5s;
-  overflow-x: hidden;
 }
 
 html {
@@ -619,6 +618,10 @@ footer .list{
 
   .massage-service-2 .carousel-btn.next {
     right: 0;
+  }
+  
+  .contact {
+    overflow-x: hidden; 
   }
 
   .contact .dp {
