@@ -1,0 +1,682 @@
+@import url("https://fonts.googleapis.com/css2?family=Belleza&family=Merienda&family=Pinyon+Script&family=Roboto&family=Roboto+Condensed&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+:root {
+  --color: hsl(200, 50%, 50%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.5s;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/*  HEADER  */
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  color: rgb(255, 188, 174);
+  padding: 3vh 0;
+  width: 100vw;
+  box-shadow: 0 5px 20px 0;
+  z-index: 1000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10vw;
+  padding-left: 10vw;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo h1 {
+  font-family: 'Roboto';
+  font-size: 3.6vw;
+}
+
+.logo p {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.nav-query ul {
+  display: flex;
+}
+
+.nav-link {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.nav-link a {
+  color: #ffb5a4;
+  position: relative;
+}
+
+.nav-link a::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background-color: #ffb5a4;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.nav-link a:hover::after {
+  width: 100%;
+}
+
+#menu-bar {
+  display: none;
+}
+
+/* END HEADER */
+
+/*  HOME */
+
+.home {
+  height: 100vh;
+  background-color: #ffb5a4;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home img {
+  width: 25vw;
+}
+
+.home-description {
+  font-family:  'Merienda';
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0 50px;
+}
+
+.home-description p {
+  margin: 25px 0;
+}
+
+.home button {
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border: white 1px solid;
+  margin: 0 auto;
+  width: 10vw;
+  padding: 7px;
+  position: relative;
+}
+
+.home button:hover{
+  background-color: white;
+  color: #ffb5a4;
+}
+
+/* END HOME */
+
+/*  SERVICES */
+
+.services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 80vw;
+  padding: 70px 10vw 0;
+}
+
+.title {
+  font-family: 'Merienda';
+  color: #ffb5a4;
+  margin: 100px 0 50px;
+}
+
+.massage {
+  display: flex;
+  height: 80vh;
+  width: 80vw;
+}
+
+.foot {
+  height: 40vh;
+}
+
+.massage-service-description {
+  width: 50%;
+  height: 20vw;
+}
+
+.massage-service-2 .massage-service-description {
+  width: 50%;
+}
+
+.massage-service-description h2, h3{
+  font-family: 'Belleza';
+  color: #ffb5a4;
+}
+
+.massage-service-description p {
+  margin: 10px 0;
+}
+
+.carousel {
+  height: 20vw;
+  width: 50%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+}
+
+.slide[data-active] {
+  opacity: 1;
+}
+
+.slide > img {
+  display: block;
+  height: 20vw;
+  width: 30vw;
+  object-fit: cover;
+  object-position: center;
+}
+
+.massage-service-2 .carousel {
+  width: 30vw;
+  margin-left: 10vw;
+}
+
+.carousel-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  border-radius: .25rem;
+  font-size: 2.3vw;
+  z-index: 2;
+  top: 50%;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:focus {
+  outline: 1px solid black;
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 10vw;
+}
+
+.massage-service-2 .carousel-btn.next {
+  right: 0;
+}
+
+.massage-service-2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+
+/* .card {
+  background: white;
+  padding: 1rem;
+  border-radius: .25rem;
+  width: 20vw;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
+
+.card + .card {
+  margin-left: 5vw;
+}
+
+.card img {
+  height: 25vh;
+  width: 18vw;
+}
+
+.card-header {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.card-body {
+  font-size: .9rem;
+}
+
+.card-footer {
+  margin-top: 1rem;
+}
+
+.btn {
+  background-color: var(--color);
+  border: none;
+  color: white;
+  padding: .5em .75em;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: hsl(200, 50%, 60%);
+}
+
+.btn.btn-outline {
+  background: white;
+  border: 1px solid  var(--color);
+  color: var(--color);
+}
+
+.btn.btn-outline:hover, .btn.btn-outline:focus{
+  background-color: hsl(200, 50%, 90%);
+}
+
+.btn + .btn {
+  margin-left: .5rem;
+} */
+/*END SERVICES*/
+
+/*  CONTACT  */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 5vw;
+}
+
+.contact .dp {
+  display: flex;
+  justify-content: center;
+}
+
+.contact .description {
+  margin: auto;
+}
+
+.links {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.contact-image {
+  height: 12vw;
+  width: 26vw;
+}
+
+.profile-pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin: 0 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+#re-wa {
+  margin-top: 12px;
+}
+
+.re-wa {
+  cursor: pointer;
+  color: #ffb5a4;
+  position: relative;
+}
+
+.re-wa i {
+  width: 16px;
+  margin-right: 2px;
+}
+
+.re-wa::after {
+  content: '';
+  height: 5px;
+  width: 0;
+  border-radius: 10px;
+  background-color: #ffb5a4;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.re-wa:hover::after {
+  width: 100%;
+}
+
+/*  END CONTACT  */
+
+/*  FOOTER  */
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+footer .list{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 20%;
+}
+
+footer ul li {
+  margin: 13px 0;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: #ffb5a4;
+}
+
+footer i {
+  color: #ffb5a4;
+  width: 16px;
+  margin-right: 2px;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/*  END FOOTER  */
+
+
+@media screen and (max-width: 770px){
+  .nav-query{
+    position: fixed;
+    top: 11.7vw;
+    left: 0;
+    width: 100%;
+    background: #ffb5a4;
+    transform: scaleY(0);
+    transform-origin: right;
+    opacity: 0;
+  }
+
+  .nav-query ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-query li {
+    padding: 10px;
+    color: white;
+  }
+
+  .nav-query li a{
+    color: white;
+  }
+
+  .nav-query.nav-toggle {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  #menu-bar {
+    display: block;
+  }
+
+  .fa-times {
+    transform: rotate(180deg);
+  }
+
+  /* HOME */
+
+  .home button {
+  width: 11vw;
+  }
+
+  /* SERVICES */
+
+  .massage {
+    height: 90vh;
+    width: 90vw;
+  }
+
+  .foot {
+    height: 90vh;
+  }
+
+  .massage-service-2 .massage-service-description {
+    width: 73%;
+  }
+
+  .carousel {
+    height: 33vw;
+    width: 50%;
+  }
+
+  .slide > img {
+    height: 33vw;
+    width: 43vw;
+  }
+
+  .massage-service-2 .carousel {
+    width: 60vw;
+    margin-left: 0;
+  }
+
+  .carousel-btn.prev {
+    left: 0;
+  }
+
+  .carousel-btn.next {
+    right: 2vw;
+  }
+
+  .massage-service-2 .carousel-btn.next {
+    right: 0;
+  }
+
+  /*  CONTACT  */
+
+
+.profile-pic {
+  margin: 0 20px;
+}
+
+/*  END CONTACT  */
+
+/*  FOOTER  */
+
+footer .list{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 3%;
+}
+
+/*  END FOOTER  */
+}
+
+@media screen and (max-width: 430px) {
+  .nav-query {
+    top: 17.8vw;
+  }
+
+  .logo h1 {
+    font-size: 5vw;
+  }
+  
+  .home button {
+    width: 20vw;
+  }
+
+  .home img {
+    width: 50vw;
+  }
+
+  .home-description {
+    font-size: 3vw;
+    margin: 0 24px;
+  }
+
+  /*  SERVICES */
+
+  .massage {
+    flex-direction: column;
+    height: 100%;
+    width: 80vw;
+    margin-top: 100px;
+  }
+
+  .first-massage {
+    margin-top: 0;
+  }
+
+  .foot {
+    height: 100%;
+    margin: 100px 0 0;
+  }
+
+  .massage-service-description {
+    height: 100%;
+    width: 100%;
+  }
+
+  .massage-service-2 .massage-service-description {
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel {
+    height: 70vw;
+    width: 100%;
+  }
+
+  .slide > img {
+    height: 70vw;
+    width: 80vw;
+  }
+
+  .massage-service-2 {
+    flex-direction: column;
+  }
+
+  .massage-service-2 .carousel {
+    width: 100%;
+    margin: 0 0;
+  }
+
+  .carousel-btn {
+    border-radius: .25rem;
+    font-size: 6vw;
+    z-index: 2;
+    top: 50%;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+
+  .carousel-btn.prev {
+    left: 0;
+  }
+
+  .carousel-btn.next {
+    right: 0;
+  }
+
+  .massage-service-2 .carousel-btn.next {
+    right: 0;
+  }
+
+  .contact .dp {
+    flex-direction: column;
+  }
+
+  .contact .description {
+    margin: 10px 50px 0;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .profile-pic {
+    margin: 0 100px;
+  }
+
+  /*  END CONTACT  */
+
+  /*  FOOTER  */
+
+  footer .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 3%;
+  }
+
+  footer ul li {
+    margin: 13px 0;
+  }
+
+  footer a {
+    color: white;
+  }
+
+  footer i {
+    color: #ffb5a4;
+    width: 16px;
+    margin-right: 2px;
+  }
+
+  footer .social {
+    margin: 20px 0 0;
+  }
+}
+
+@media screen and (max-width: 380px) {
+
+  footer .list {
+    flex-wrap: wrap-reverse;
+  }
+
+  footer .social {
+    margin: 0;
+  }
+}
